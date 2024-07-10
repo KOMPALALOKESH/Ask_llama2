@@ -34,7 +34,7 @@ jobs:
         unzip ngrok.zip
         sudo mv ngrok /usr/local/bin
 
-    - name: Run your script with ngrok
+    - name: Start Flask app and ngrok
       env:
         DLAI_TOGETHER_API_BASE: ${{ secrets.DLAI_TOGETHER_API_BASE }}
         TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
@@ -43,17 +43,21 @@ jobs:
         # Start your Flask app in the background
         python app.py &
 
+        # Wait for Flask to start
+        sleep 5
+
         # Authenticate ngrok
         ngrok authtoken $NGROK_AUTH_TOKEN
 
         # Expose your Flask app to the public and capture the output
         ngrok http 5000 > ngrok.log &
-
-        # Wait for ngrok to start
-        sleep 5
-
-        # Output the ngrok public URL
-        cat ngrok.log | grep -o 'https://[0-9a-z]*\.ngrok\.io'
         
-        # Keep the job running
-        tail -f /dev/null
+        # Wait for ngrok to start and capture the public URL
+        sleep 5
+        cat ngrok.log | grep -o 'https://[0-9a-z]*\.ngrok\.io' > ngrok_url.txt
+        
+        # Print the ngrok public URL
+        echo "ngrok public URL: $(cat ngrok_url.txt)"
+
+    - name: Keep the job running
+      run: tail -f /dev/null
