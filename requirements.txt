@@ -3,3 +3,4 @@ PyPDF2
 markdown
 requests
 python-dotenv
+gunicorn
