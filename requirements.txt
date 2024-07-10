@@ -33,7 +33,7 @@ dill==0.3.8
 distlib==0.3.8
 dnspython==2.6.1
 docutils==0.20.1
-email_validator
+email_validator>=1.0.5, <2.2.0
 fastapi==0.111.0
 fastapi-cli==0.0.4
 filelock==3.13.1
