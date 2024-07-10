@@ -180,3 +180,38 @@ input {
     align-self: flex-start;
     justify-content: first baseline;
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+        height: 100%;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .chat-container {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .document-preview {
+        display: none;
+    }
+
+    .chat-section {
+        height: 100%;
+    }
+
+    .input-bar-container {
+        width: 90%;
+        top: 90%;
+        padding: 1%;
+        align-self: center;
+        margin-top: 0.2em;
+    }
+
+    .submit-button {
+        margin: 1%;
+    }
+}
