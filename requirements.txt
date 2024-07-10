@@ -1,5 +1,5 @@
-Flask==2.1.1
-PyPDF2==2.12.1
-markdown==3.4.1
-requests==2.27.1
-python-dotenv==0.20.0
+Flask
+PyPDF2
+markdown
+requests
+python-dotenv
