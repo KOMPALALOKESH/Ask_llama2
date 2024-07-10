@@ -6,12 +6,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [16.16.0]  # Explicitly set Node.js version to 16
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3  # Updated to v3
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
 
     - name: Set up Python
-      uses: actions/setup-python@v4  # Updated to v4
+      uses: actions/setup-python@v4
       with:
         python-version: '3.12.4'
 
