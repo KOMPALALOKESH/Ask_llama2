@@ -28,9 +28,26 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run your script
+    - name: Install ngrok
+      run: |
+        wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+        unzip ngrok-stable-linux-amd64.zip
+        sudo mv ngrok /usr/local/bin
+        
+    - name: Run your script with ngrok
       env:
         DLAI_TOGETHER_API_BASE: ${{ secrets.DLAI_TOGETHER_API_BASE }}
         TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
+        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
       run: |
-        python app.py
+        # Start your Flask app in the background
+        python app.py &
+
+        # Authenticate ngrok
+        ngrok authtoken $NGROK_AUTH_TOKEN
+
+        # Expose your Flask app to the public
+        ngrok http 5000 &
+
+        # Keep the job running
+        tail -f /dev/null
