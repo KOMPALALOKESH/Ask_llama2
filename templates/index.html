@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask llama</title>
+    <link rel="icon" href="../static/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="document-preview" id="documentPreview">
+            <p>Uploaded Documents Preview Will Be Shown Here . . .</p>
+        </div>
+        <div class="chat-section">
+            <h2 class="model-info">Model: llama2</h2>
+            <div class="message-history" id="messages">
+                <!-- Messages will be appended here -->
+            </div>
+            <div class="input-bar-container" id="inputBarContainer">
+                <label for="documentInput" class="document-label"><img src="../static/images/attachment.png" alt="Upload Document" class="attachment"></label>
+                <input type="file" id="documentInput" class="document-input">
+                <input type="text" id="messageInput" class="message-input" placeholder="Message llama">
+                <button id="submitButton" class="submit-button"><img src="../static/images/submit.png" alt="Send"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
