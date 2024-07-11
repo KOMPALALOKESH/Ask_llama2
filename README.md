@@ -4,4 +4,7 @@
 [https://ask-llama2.onrender.com](https://ask-llama2.onrender.com)
 
 ## Video Demo:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<video width="320" height="240" autoplay loop>
+  <source src="https://github.com/KOMPALALOKESH/Ask_llama2/blob/main/static/images/stars.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
