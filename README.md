@@ -5,6 +5,5 @@
 
 ## Video Demo:
 <video width="320" height="240" autoplay loop>
-  <source src="https://github.com/KOMPALALOKESH/Ask_llama2/blob/main/static/images/stars.mp4" type="video/mp4">
-  Your browser does not support the video tag.
+  <source src="https://github.com/KOMPALALOKESH/Ask_llama2/blob/main/static/images/demo.mp4" type="video/mp4">
 </video>
