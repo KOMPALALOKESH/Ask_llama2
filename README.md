@@ -1,8 +1,8 @@
 # Ask_llama2
 
-## Live Demo:
+**Live Demo:** <br>
 [https://ask-llama2.onrender.com](https://ask-llama2.onrender.com)
 
-## Video Demo:
+**Video Demo:**
 
-https://github.com/KOMPALALOKESH/Ask_llama2/blob/main/static/images/demo.mp4
+https://github.com/user-attachments/assets/02ef8aed-0339-4afe-8d96-a5006586fad9
